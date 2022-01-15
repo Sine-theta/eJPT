@@ -1,0 +1,11 @@
+Analyze the nmap results very thoroughly
+search the vulnerable service name in metsaploit and look for publically available exploits
+Exploiting this machine is pretty straight forward.
+Always check for other networks using ifconfig in exploited machine.
+If there exist a route to another network, we should add that network in the routing table
+Use run autoroute command in metasploit(after backgrounding the 1st session) inorder to acces that unreachable machine from attacker machine.
+Use nmap or auxillary scanneres in metasploit for network enumeration.
+If you want to access any port in the machine in that other network, you need to do port forwarding
+Use portwd command in metasploit. After port forwarding, enumerating the port in your localhost to which you forwarded traffic will result the services used by the original port in that unreachable machine.
+Then look for publically available exploits for the vulnerable services.
+Note: Look for post exploitation module and privilege escalation techniques.
