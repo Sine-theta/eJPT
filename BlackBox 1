@@ -1,0 +1,7 @@
+Run a detailed nmap scan for all the hosts. Besides that, run an Aggressive scan for the first host in order to save time.
+Check all the ports from the nmap results.
+Do not overthink about exploits. It's easy to identify a exploit.
+Recurssive directory bruteforcing is important.
+Explore all the possible endpoints.
+[Important] Check for hints for the next host within the same directory/endpoint where you found the flag for current host.
+Use auxillary scanner in metasploit. Refer to internet to exploit a particular vulnerability using metasploit.
